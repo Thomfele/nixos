@@ -2,27 +2,27 @@
 
 # FLAKES
 
-Create a remote server on KVM
+Create a remote server on KVM, managed only through local flake.nix
 
 1) Spin up a minimal NixOS VM change password on nixos user and copy its IP address
 
 2) To seperate Flakes from your Host (inside /etc/nixos) you need to create a separate folder:
 
-- mkdir /etc/nixos/flakes
+- mkdir /etc/nixos/flakes or ~/flakes
 
 3) Copy flake.nix and flake.txt (for instructions) into the main flakes-directory
 
 4) Create a new directory "modules" in this directory:
 
-- mkdir /etc/nixos/flakes/modules
+- mkdir /etc/nixos/flakes/modules or ~/flakes/modules
 
-5) Copy all module/.nix files into "/etc/nixos/flakes/modules"
+5) Copy all module/.nix files into "/etc/nixos/flakes/modules" or "~/flakes/modules"
 
-6) Change the "username" in users.nix
+6) Change the "username" in "users.nix", "alsa.nix", "kvm.nix" and/or "podman.nix", 
 
 - Default username is 'floris', default password is 'passwd'
 
-7) follow example commands on flake.txt, change ip- and username
+7) follow example commands on flake.txt, change ip-address and username
 
 - nix run github:nix-community/nixos-anywhere -- floris@192.168.122.x --flake .#vm
 
