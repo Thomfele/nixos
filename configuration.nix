@@ -10,7 +10,7 @@
       ./modules/ssh.disable.nix
       ./modules/users.nix
 
-      ./modules/hostname.nix
+      ./modules/ws.hostname.nix
       ./modules/system.nix
       ./modules/ws.dhcp.nix
       ./modules/services.nix
