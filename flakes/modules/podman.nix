@@ -27,12 +27,6 @@
     #podman-compose # start group of containers for dev
   ];
 
-  users.users.floris = {
-    extraGroups = [
-      "podman"
-    ];
-  };
-
 /*
   # Run Podman containers as systemd services
 
