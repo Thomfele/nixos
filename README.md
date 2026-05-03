@@ -10,16 +10,16 @@
 - Copy configuration.nix to your local "/etc/nixos" directory
 - Leave your allready default "hardware-configuration.nix" untouched
 
-3) Change the "username" in "users.nix"
-
-- Default username is 'admin', can be changed in your own name
-- default password is 'passwd'
-
-4) Create a directory "modules" into your local "/etc/nixos" directory
+3) Create a directory "modules" into your local "/etc/nixos" directory
 
 - sudo mkdir /etc/nixos/modules
 
-5) Copy all /module files to your local "/etc/nixos/modules" directory
+4) Copy all /module files to your local "/etc/nixos/modules" directory
+
+5) Change the "username" in "/etc/nixos/modules/users.nix"
+
+- Default username is 'admin', can be changed in your own name
+- Default password is 'passwd'
 
 6) Add, change or rename module files when needed and reference them in your configuration.nix file.
 
