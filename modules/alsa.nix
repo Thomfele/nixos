@@ -1,5 +1,5 @@
 
-{ pkgs, ... }:
+{ pkgs, config,  ... }:
 
 {
 
@@ -22,12 +22,5 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  users.users.floris = {
-    extraGroups = [
-      "audio"
-    ];
-  };
-
 
 }

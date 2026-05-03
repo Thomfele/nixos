@@ -4,6 +4,6 @@
 {
 
   # Hostname.
-  networking.hostName = "ws";
+  networking.hostName = "flaptop";
 
 }

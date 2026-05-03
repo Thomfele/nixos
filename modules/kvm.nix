@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
 
@@ -23,22 +23,16 @@
 
     qemu = {
       package = pkgs.qemu_kvm;
-      runAsRoot = true; # Doesn't actually run as root because of overriding config below.
       swtpm.enable = true; # Required for Windows 11 TPM
       vhostUserPackages = [ pkgs.virtiofsd ]; # NEW
+      runAsRoot = true; # Doesn't actually run as root because of overriding config below.
       verbatimConfig = 
       ''
         namespaces = []
-        user = "floris"
+        user = "qemu"
         group = "users"
       '';
     };
-  };
-
-  users.users.floris = {
-    extraGroups = [
-      "libvirtd"
-    ];
   };
 
   # KVM Nested options.
@@ -46,15 +40,5 @@
 
   # KVM Options.
   programs.dconf.enable = true;
-
-/*
-      ovmf = {
-        enable = true;
-        packages = [(pkgs.OVMF.override {
-          secureBoot = true;
-          tpmSupport = true;
-        }).fd];
-      };
-*/
 
 }

@@ -1,25 +1,36 @@
 
-{ ... }:
+{ config, ... }:
 
-  # Define a user account. Don't forget to reset the initial password.
   let
-    user = "floris";
+    admin = "admin";
+    service = "qemu";
   in
 
 {
 
-  users.users.${user} = {
+  users.users.${admin} = {
     isNormalUser = true;
-    description = "${user}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    description = "${admin}";
+    group = "users";
+    extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" "podman" ];
     initialPassword = "passwd";
-    home  = "/home/${user}";
+    home  = "/home/${admin}";
     createHome = true;
     shell = "/run/current-system/sw/bin/bash";
     #packages = with pkgs; [
     # some package
     #];
+  };
 
+  users.users.${service} = {
+    isNormalUser = true;
+    description = "${service}";
+    group = "users";
+    #extraGroups = [ "wheel" "networkmanager" "audio" ];
+    createHome = false;
+    #packages = with pkgs; [
+    # some package
+    #];
   };
 
   # Allow the user to log in as root with a password.
