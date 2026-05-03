@@ -21,7 +21,7 @@
 6) Change the "username" in "/etc/nixos/flakes/modules/users.nix" or "~/flakes/modules/users.nix"
 
 - Default username is 'admin', can be changed in your own name
-- default password is 'passwd'
+- Default password is 'passwd'
 
 7) follow example commands on flake.txt, change ip-address and username
 
