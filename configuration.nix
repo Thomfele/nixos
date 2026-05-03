@@ -1,7 +1,8 @@
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -27,6 +28,9 @@
       ./modules/flatpak.nix
       ./modules/gnome.nix
       ./modules/kvm.nix
+
+      ./misc/mega.nix
+      ./misc/p43s.nix
 
     ];
 
