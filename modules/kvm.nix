@@ -24,13 +24,13 @@
     qemu = {
       package = pkgs.qemu_kvm;
       swtpm.enable = true; # Required for Windows 11 TPM
-      vhostUserPackages = [ pkgs.virtiofsd ]; # NEW
+      vhostUserPackages = [ pkgs.virtiofsd ];
       runAsRoot = true; # Doesn't actually run as root because of overriding config below.
       verbatimConfig = 
       ''
         namespaces = []
         user = "qemu"
-        group = "users"
+        group = "qemu"
       '';
     };
   };
