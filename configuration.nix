@@ -29,9 +29,6 @@
       ./modules/gnome.nix
       ./modules/kvm.nix
 
-      ./misc/mega.nix
-      ./misc/p43s.nix
-
     ];
 
 }
