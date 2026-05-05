@@ -7,12 +7,12 @@
 nix flake show
 nix flake update
 
-nix run github:nix-community/nixos-anywhere -- floris@192.168.122.x --flake .#vm
+nix run github:nix-community/nixos-anywhere -- admin@192.168.122.x --flake .#vm
 
 # Regenerate hardware-configuration.nix on Remote system, usefull for external hardware:
 nixos-generate-config --show-hardware-config > /etc/nixos/hardware-configuration.nix
 # or, during Provisioning:
 nix run github:nix-community/nixos-anywhere -- --generate-hardware-config ./hardware-configuration.nix --nixos-generate-config>
 
-# Update Remote system with update flake.nix:
+# Update Remote system with updated flake.nix:
 nixos-rebuild switch --flake .#vm --target-host root@192.168.122.x
