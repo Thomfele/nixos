@@ -27,7 +27,7 @@
   # swap file (recommended for ssd-drives):
   swapDevices = [ {
     device = "/var/lib/swapfile";
-    size = 32*1024;
+    size = 16*1024; # 16 Gb
   } ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
