@@ -2,7 +2,6 @@
 { ... }:
 
   let
-    user = "floris";
     admin = "admin";
     service = "qemu";
   in
@@ -10,27 +9,10 @@
 {
 
   # Create groups
-  users.groups.${user} = {};
   users.groups.${admin} = {};
   users.groups.${service} = {};
 
-  # Create user
-  users.users.${user} = {
-    isNormalUser = true;
-    description = "${user}";
-    group = "${user}";
-    extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" "podman" ];
-    initialPassword = "passwd";
-    home  = "/home/${user}";
-    createHome = true;
-    shell = "/run/current-system/sw/bin/bash";
-    #packages = with pkgs; [
-    # some package
-    #];
-  };
-
-/*
-  # Create user
+  # Create admin
   users.users.${admin} = {
     isNormalUser = true;
     description = "${admin}";
@@ -44,9 +26,8 @@
     # some package
     #];
   };
-*/
 
-  # Create user
+  # Create service
   users.users.${service} = {
     isSystemUser = true;
     description = "${service}";
