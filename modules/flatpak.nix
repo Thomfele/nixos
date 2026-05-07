@@ -1,10 +1,13 @@
 
-{ ... }:
+{ pkgs, ... }:
+
+  let
+    service = "flatpak";
+  in
 
 {
 
-  # FlatPaks.
-  services.flatpak.enable = true;
+  services.${service}.enable = true;
 
 }
 

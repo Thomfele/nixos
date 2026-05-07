@@ -1,6 +1,29 @@
-{ pkgs, ... }:
+
+{ pkgs, config, lib, ... }:
+
+  let
+    service = "qemu";
+  in
 
 {
+
+  users.users.${config.users.admin}.extraGroups = [ "libvirtd" ];
+
+  # Create group
+  users.groups.${service} = {};
+
+  # Create user
+  users.users.${service} = {
+    isSystemUser = true;
+    description = "${service}";
+    group = "${service}";
+    shell = "/usr/bin/nologin"; # No shell
+    createHome = false; # No homedirectory
+    password = "!"; # No password
+    #packages = with pkgs; [
+    # some package
+    #];
+  };
 
   # System packages.
   environment.systemPackages = with pkgs; [
@@ -29,8 +52,8 @@
       verbatimConfig = 
       ''
         namespaces = []
-        user = "qemu"
-        group = "qemu"
+        user = "${service}"
+        group = "${service}"
       '';
     };
   };

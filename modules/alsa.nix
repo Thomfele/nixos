@@ -1,7 +1,9 @@
 
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 
 {
+  users.users.${config.users.admin}.extraGroups = [ "audio" ];
+  users.users.${config.users.special}.extraGroups = [ "audio" ];
 
   environment.systemPackages = with pkgs; [
     alsa-utils
