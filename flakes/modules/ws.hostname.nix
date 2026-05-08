@@ -1,9 +1,0 @@
-
-{ ... }:
-
-{
-
-  # Hostname.
-  networking.hostName = "workstation";
-
-}
