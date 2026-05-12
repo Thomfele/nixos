@@ -1,6 +1,7 @@
-# nixos
 
-# NixOS Workstation with remote Flake deploy on KVM
+# NixOS with remote Flake deploy on KVM
+
+# Workstation
 
 1) Change the "username" in "/etc/nixos/modules/admin.nix"
 
