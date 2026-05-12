@@ -22,7 +22,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   gnome-tweaks
-  gnomeExtensions.ip-finder
+  #gnomeExtensions.ip-finder
   gnomeExtensions.transparent-window-moving
   gnomeExtensions.transparent-top-bar
   ];
