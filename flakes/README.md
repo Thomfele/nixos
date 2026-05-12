@@ -1,4 +1,5 @@
-# flake
+
+# NixOS flake
 
 # Virtual Machine
 
