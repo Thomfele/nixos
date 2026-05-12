@@ -1,6 +1,6 @@
-# nixos
+# flake
 
-# FLAKES
+# Virtual Machine
 
 1) Change the "username" in "~/flakes/modules/admin.nix"
 
