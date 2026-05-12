@@ -1,0 +1,7 @@
+
+{ ... }:
+
+{
+  # Hostname.
+  networking.hostName = "virtualmachine";
+}
