@@ -14,7 +14,7 @@
 
 3) Note
 
-- Simply comment out what you do not want to install in flake.nix
+- Simply comment out what you do not want to install in "flake.nix"
 - Virtual machines in KVM use 'mbt' to boot properly in this setup
 - SSH is turned on by default
-- Change root password and login!
+- Change root password and login in "admin.default.nix"
