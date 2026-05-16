@@ -11,13 +11,19 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = false;
-    jack.enable = true;
+    pulse.enable = true;
+    jack.enable = false;
   };
+
+  # Save sound card state on shutdown.
+  hardware.alsa.enablePersistence = true;
+
+  # Enable RealtimeKit for audio purposes.
+  security.rtkit.enable = true;
 
 }

@@ -1,4 +1,3 @@
-
 { pkgs, config, lib, ... }:
 
   let
@@ -63,5 +62,15 @@
 
   # KVM Options.
   programs.dconf.enable = true;
+
+/*
+  # Run bash scripts.
+  system.activationScripts.myScript = ''
+    echo "Running post-storage script..."
+    ${../scripts/storage.sh}
+    echo "Running post-networks script..."
+    ${../scripts/networks.sh}
+  '';
+*/
 
 }

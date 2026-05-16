@@ -35,6 +35,7 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
 
   # This value determines the NixOS release.
   system.stateVersion = "25.11";

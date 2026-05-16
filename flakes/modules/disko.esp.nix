@@ -2,6 +2,7 @@
 { pkgs, ... }:
 
 {
+
   # System disk.
   disko.devices = {
     disk = {
