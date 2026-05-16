@@ -30,7 +30,7 @@
       ./modules/flakes.nix
       ./modules/flatpak.nix
       ./modules/gnome.nix
-      ./modules/kvm.nix
+      #./modules/kvm.nix
 
     ];
 
